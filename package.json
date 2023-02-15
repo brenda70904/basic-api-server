@@ -1,0 +1,30 @@
+{
+  "name": "basic-api-server",
+  "version": "1.0.0",
+  "description": "## For React Applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenda70904/basic-api-server.git"
+  },
+  "author": "Brenda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brenda70904/basic-api-server/issues"
+  },
+  "homepage": "https://github.com/brenda70904/basic-api-server#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "eslint": "^8.34.0",
+    "express": "^4.18.2",
+    "jest": "^29.4.3",
+    "pg": "^8.9.0",
+    "sequelize": "^6.28.0",
+    "sequelize-cli": "^6.6.0",
+    "sqlite3": "^5.1.4",
+    "supertest": "^6.3.3"
+  }
+}

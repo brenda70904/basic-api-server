@@ -5,6 +5,19 @@ const { customerModel } = require("../models");
 
 const router = express.Router();
 
+//get specific data by id
+router.get("/customer/:id", async(req, res, next)=>{
+    const id = req.params.id;
+    try{
+    const customer = await customerModel.findByPk(id);
+    res.status(200).send(customer);
+    }catch(e){
+        next(e);
+    };
+});
+// bug: need to consider if id is not exist in data
+
+
 //Get All Records
 router.get("/customer", async (req, res, next) => {
     const customers = await customerModel.findAll();
@@ -12,17 +25,7 @@ router.get("/customer", async (req, res, next) => {
 
 });
 
-// get specific data by id
-// router.get("/customer/:id", async(req, res, next)=>{
-//     try{
-//         const id = req.params.id;
-//     const customer = await customerModel.findByPk(id);
-//     console.log(`this is req.body.id ${id}`)
-//     res.status(200).send(customer);
-//     }catch(e){
-//         next(e);
-//     }
-// })
+
 
 // create data
 router.post("/customer", async (req, res, next) => {

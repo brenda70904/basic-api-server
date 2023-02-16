@@ -58,5 +58,10 @@ describe("REST API", () => {
         expect(response.body[0].age).toEqual(30);
         expect(response.body[0].pronouns).toEqual('she/her');
         expect(response.body[0].id).toBeTruthy();
-    })
-})
+    });
+
+    it("get one customers by id", async ()=>{
+        let response = await request.get("/customer/:id");
+        
+    });
+});

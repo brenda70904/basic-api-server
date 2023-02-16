@@ -2,6 +2,7 @@
 
 
 module.exports = (sequelizeDataBase, DataTypes) => {
+    //takes two prams, database name and a callback fun
     return sequelizeDataBase.define("customers",{
         name:{
             type:DataTypes.STRING,

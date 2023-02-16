@@ -1,5 +1,6 @@
 "use strict";
 
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -23,7 +24,7 @@ app.use("*",notFound);
 app.use(handleError);
 
 const start =()=>{
-app.listen(PORT, ()=> console.log(`listening PORT ${PORT}`))
+app.listen(PORT, ()=> console.log(`listening on PORT ${PORT}`))
 }
 
 module.exports = {app, start};

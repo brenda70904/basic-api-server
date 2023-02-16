@@ -6,12 +6,12 @@ const { customerModel } = require("../models");
 const router = express.Router();
 
 //get specific data by id
-router.get("/customer/:id", async(req, res, next)=>{
+router.get("/customer/:id", async (req, res, next) => {
     const id = req.params.id;
-    try{
-    const customer = await customerModel.findByPk(id);
-    res.status(200).send(customer);
-    }catch(e){
+    try {
+        const customer = await customerModel.findByPk(id);
+        res.status(200).send(customer);
+    } catch (e) {
         next(e);
     };
 });
@@ -39,16 +39,26 @@ router.post("/customer", async (req, res, next) => {
 });
 
 //update
-// router.put("/customer", (req, res, next) => {
-
-
-// });
+router.put("/customer", async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        const updateCustomer = await customerModel.update(req.body, { where: { id } })
+        res.status(200).send(updateCustomer);
+    } catch (e) {
+        next(e);
+    };
+});
 
 
 //delete
-// router.delete("/customer", (req, res, next) => {
-
-
-// });
+router.delete("/customer", async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        const deleteCustomer = await customerModel.destroy({ where: { id } });
+        res.status(200).send('Deleted');
+    } catch {
+        next(e);
+    };
+});
 
 module.exports = router;

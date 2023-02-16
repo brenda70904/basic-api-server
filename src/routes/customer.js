@@ -12,6 +12,7 @@ router.get("/customer", async (req, res, next) => {
 
 });
 
+// get specific data by id
 // router.get("/customer/:id", async(req, res, next)=>{
 //     try{
 //         const id = req.params.id;
@@ -23,6 +24,7 @@ router.get("/customer", async (req, res, next) => {
 //     }
 // })
 
+// create data
 router.post("/customer", async (req, res, next) => {
     try {
         const newCustomer = await customerModel.create(req.body);
@@ -33,14 +35,17 @@ router.post("/customer", async (req, res, next) => {
     }
 });
 
-router.put("/customer", (req, res, next) => {
+//update
+// router.put("/customer", (req, res, next) => {
 
 
-});
-
-router.delete("/customer", (req, res, next) => {
+// });
 
 
-});
+//delete
+// router.delete("/customer", (req, res, next) => {
+
+
+// });
 
 module.exports = router;

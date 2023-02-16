@@ -8,9 +8,11 @@ const logger = require("./middleware/logger");
 const validator = require("./middleware/validator");
 const handleError = require("./error-handlers/500");
 const notFound = require("./error-handlers/404");
+const customerRouter = require("./routes/customer");
 
-
+app.use(express.json());
 app.use(logger);
+app.use(customerRouter);
 
 app.get("/", (req, res, next)=>{
     res.status(200).send("Basic API server");

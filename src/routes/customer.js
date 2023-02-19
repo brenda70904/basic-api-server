@@ -39,7 +39,7 @@ router.post("/customer", async (req, res, next) => {
 });
 
 //update
-router.put("/customer", async (req, res, next) => {
+router.put("/customer/:id", async (req, res, next) => {
     const { id } = req.params;
     try {
         const updateCustomer = await customerModel.update(req.body, { where: { id } })
@@ -51,7 +51,7 @@ router.put("/customer", async (req, res, next) => {
 
 
 //delete
-router.delete("/customer", async (req, res, next) => {
+router.delete("/customer/:id", async (req, res, next) => {
     const { id } = req.params;
     try {
         const deleteCustomer = await customerModel.destroy({ where: { id } });

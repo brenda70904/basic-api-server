@@ -67,26 +67,24 @@ describe("REST API", () => {
         expect(response.body.id).toBeTruthy();
     });
 
-    // it("update as expected", async()=>{
-    //     let response = await request.put("/customer/2").send({
-    //         name:"welly",
-    //         age:33,
-    //         pronouns:"he/him",
-    //     });
-    //     expect(response.status).toEqual(200);
-    //     // expect(response.body.name).toEqual("welly");
-    //     // expect(response.body.age).toEqual(33);
-    //     expect(response.body.pronouns).toEqual([2]);
-    //     // expect(response.body.id).toBeTruthy();
+    it("update as expected", async()=>{
+        let response = await request.put("/customer/2").send({
+            name:"welly",
+            pronouns:"he/him",
+        });
+        expect(response.status).toEqual(200);
+        // expect(response.body.name).toEqual("welly");
+        // expect(response.body.age).toEqual(33);
+        // expect(response.body.pronouns).toEqual([2]);
+        // expect(response.body.id).toBeTruthy();
         
-    // });
+    });
 
-    // it("update as expected", async()=>{
-    //     let response = await request.delete("/customer/2");
-    //     expect(response.status).toEqual(200);
+    it("delete as expected", async()=>{
+        let response = await request.delete("/customer/2");
+        expect(response.text).toEqual("Deleted");
 
-
-    // });
+    });
 
 
 });
